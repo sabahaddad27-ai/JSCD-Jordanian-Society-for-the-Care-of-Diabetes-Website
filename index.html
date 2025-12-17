@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="Stuff.js"></script>
+
+  <title>الجمعية الأردنية للعناية بالسكري | The Jordanian Society for the Care of Diabetes</title>
+  <meta name="description" content="الجمعية الأردنية للعناية بالسكري – الريادة في التوعية والتعليم والرعاية والبحث العلمي في الأردن | The Jordanian Society for the Care of Diabetes." />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+
+    :root {
+      --primary: #0b3c5d;
+      --accent: #19b5a5;
+      --bg-dark: #0a0f1c;
+      --bg-light: #f6f8fc;
+      --text-dark: #0f172a;
+      --text-light: #ffffff;
+      --muted: #64748b;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    body {
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.9;
+    }
+
+    .en {
+      display: block;
+      font-size: 0.85em;
+      font-weight: 600;
+      color: var(--muted);
+      direction: ltr;
+    }
+
+    .en-inline {
+      font-size: 0.85em;
+      color: var(--muted);
+      direction: ltr;
+    }
+
+    .bilingual-title {
+      line-height: 1.4;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo {
+      height: 48px;
+      width: auto;
+    }
+
+    .nav h1 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      background: radial-gradient(circle at top, #1f9dd6, var(--bg-dark));
+      color: var(--text-light);
+      padding: 4rem 1.5rem 6rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero img {
+      height: 110px;
+      margin-bottom: 2rem;
+    }
+
+    .hero h2 {
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      font-weight: 800;
+      max-width: 900px;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 720px;
+      color: #e5e7eb;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #002f2b;
+      padding: 0.9rem 3rem; /* increased horizontal padding for wider button */
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block; /* ensures width changes apply correctly */
+      min-width: 200px; /* optional: ensures it doesn’t shrink too much */
+      text-align: center;
+      font-size: 21px;
+    }
+
+    section {
+      padding: 5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h3 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--primary);
+    }
+    html {
+  scroll-behavior: smooth;
+  }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;   /* good for RTL */
+      background: var(--accent);
+      color: #002f2b;
+      padding: 0.7rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 800;
+      text-decoration: none;
+      z-index: 9999;
+    }
+
+
+    .section-title p {
+      max-width: 700px;
+      margin: 1rem auto 0;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      text-align: center;
+      flex: 1 1 280px;
+      max-width: 350px;
+    }
+
+    .card h4 {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      color: var(--primary);
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .impact {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 4rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .impact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+    }
+
+    .impact-grid div {
+      flex: 1 1 180px;
+      max-width: 220px;
+    }
+
+    footer {
+      background: #020617;
+      color: #cbd5f5;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    /* Remove unintended vertical gaps in Impact items */
+    .impact-grid h4 {
+      margin-bottom: 0.25rem;
+      font-size: 3rem; 
+      font-weight: 800;
+    }
+
+    .impact-grid p {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .impact-grid .en {
+      margin-top: 0.15rem;
+      display: block;
+      font-size: 1.25rem; 
+      font-weight: 700;
+    }
+    .social-follow {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .social-follow span {
+      font-weight: 700;
+      color: #e5e7eb;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-icons a {
+      width: 40px;
+      height: 40px;
+      background: #0f172a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #cbd5f5;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }   
+
+    .social-icons a:hover {
+      background: var(--accent);
+      color: #002f2b;
+      transform: translateY(-2px);
+    }
+
+
+    @media (max-width: 768px) {
+      .impact-grid h4 {
+        font-size: 2.2rem;
+      }
+      .impact-grid p {
+        font-size: 1.2rem;
+      }
+      .impact-grid .en {
+        font-size: 1rem;
+      }
+    }
+
+  </style>
+</head>
+<a href="#top" class="back-to-top">↑ الأعلى</a>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<body>
+<div id="top"></div>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <img src="assets/logo.png" alt="شعار الجمعية الأردنية للعناية بالسكري" class="logo">
+      <h1 class="bilingual-title">
+        الجمعية الأردنية للعناية بالسكري
+        <span class="en">The Jordanian Society for the Care of Diabetes</span>
+      </h1>
+    </div>
+    <ul>
+      <li><a href="#about">من نحن <span class="en-inline">About Us</span></a></li>
+      <li><a href="#programs">برامجنا <span class="en-inline">Programs</span></a></li>
+      <li><a href="#impact">الأثر <span class="en-inline">Impact</span></a></li>
+      <li><a href="#contact">تواصل معنا <span class="en-inline">Contact</span></a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <img src="assets/logo.png" alt="شعار الجمعية الأردنية للعناية بالسكري">
+  <h2 class="bilingual-title">
+    الريادة في رعاية مرضى السكري والتوعية والتعليم في الأردن منذ عام ١٩٩١
+    <span class="en">Leading Diabetes Care, Awareness, and Education in Jordan Since 1991</span>
+  </h2>
+  <p>
+    نعمل في الجمعية الأردنية للعناية بالسكري على تحسين جودة الحياة من خلال التوعية، التعليم، البحث العلمي، ودعم المجتمع.
+    <span class="en">Improving quality of life through awareness, education, research, and community support.</span>
+  </p>
+  <div class="hero-actions">
+    <a href="#about" class="btn-primary">
+      تعرف علينا
+      <br><span class="en-inline">Learn More</span></br>
+    </a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-title">
+      <h3 class="bilingual-title">
+        من نحن
+        <span class="en">Who We Are</span>
+      </h3>
+      <p>
+        منظمة وطنية غير ربحية تُعنى بالارتقاء برعاية مرضى السكري في الأردن
+        <span class="en">A national non-profit organization advancing diabetes care in Jordan</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="programs">
+  <div class="container">
+    <div class="section-title">
+      <h3 class="bilingual-title">
+        برامجنا الأساسية
+        <span class="en">Our Core Programs</span>
+      </h3>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h4>حملات التوعية <span class="en">Awareness Campaigns</span></h4>
+        <p>برامج مجتمعية تهدف إلى الوقاية والكشف المبكر.<span class="en">Community prevention and early detection programs.</span></p>
+      </div>
+
+      <div class="card">
+        <h4>التعليم والتدريب <span class="en">Education & Training</span></h4>
+        <p>ورش عمل ومؤتمرات وبرامج تدريبية.<span class="en">Workshops, conferences, and professional training.</span></p>
+      </div>
+
+      <div class="card">
+        <h4>البحث العلمي <span class="en">Scientific Research</span></h4>
+        <p>إعداد الدراسات ونشر الأدلة الإرشادية.<span class="en">Research initiatives and clinical guidelines.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="impact" class="impact">
+  <div class="container">
+    <div class="section-title">
+      <h3 class="bilingual-title" style="color:white;">
+        أثرنا
+        <span class="en" style="color:#e5e7eb;">Our Impact</span>
+      </h3>
+    </div>
+
+    <div class="impact-grid">
+      <div>
+        <h4>20+</h4>
+        <p>سنة من العطاء</p>
+        <span class="en" style = color:white> Years of Service</span>
+      </div>
+
+      <div>
+        <h4>100+</h4>
+        <p>فعالية تعليمية</p>
+        <span class="en" style = color:white>Educational Events</span>
+      </div>
+
+      <div>
+        <h4>10,000+</h4>
+        <p>مستفيد</p>
+        <span class="en" style = color:white>Beneficiaries</span>
+      </div>
+
+      <div>
+        <h4>وطنيًا</h4>
+        <p>شراكات</p>
+        <span class="en" style = color:white>National Partnerships</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h3>تواصل معنا / Contact Us</h3>
+    </div>
+
+    <p style="text-align:center;color:var(--muted);">
+      <span lang="en" style="display:block; margin-bottom:0.5rem;">
+      jscdjordan@gmail.com  :(البريد الإلكتروني)E-mail<br>
+        1606 9594 7 962+<span style="direction:ltr; unicode-bidi:embed;">Phone(الهاتف):</span><br>
+        عمّان – الأردن
+        <br>Amman – Jordan</br>
+      </span>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>
+    © 2025 الجمعية الأردنية للعناية بالسكري. جميع الحقوق محفوظة.
+    <span class="en">© 2025 The Jordanian Society for the Care of Diabetes. All rights reserved.</span>
+    <span class="en">Made By: Saba Haddad</span>
+    <span class="en">برمجة وتصميم الموقع: سابا حداد</span>
+  </p>
+<div class="social-follow">
+  <span>تابعونا على<br><span class="en">Follow us on</span></span>
+
+  <div class="social-icons">
+    <a href="https://www.instagram.com/jscd_jo/" target="_blank" aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://www.facebook.com/JSCDJo" target="_blank" aria-label="Facebook">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.threads.com/@jscd_jo" target="_blank" aria-label="Threads">
+      <i class="fa-brands fa-threads"></i>
+    </a>
+    <a href="https://www.youtube.com/@%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D9%8A%D8%A9%D8%A7%D9%84%D8%A7%D8%B1%D8%AF%D9%86%D9%8A%D8%A9%D9%84%D9%84%D8%B9%D9%86%D8%A7%D9%8A%D8%A9%D8%A8%D8%A7%D9%84%D8%B3%D9%83%D8%B1%D9%8A" target="_blank" aria-label="youtube">
+      <i class="fa-brands fa-youtube"></i>
+    </a>
+    <a href="https://x.com/JSCD2018" target="_blank" aria-label="Twitter">
+      <i class="fa-brands fa-twitter"></i>
+    </a>  
+  </div>
+</div>
+
+</footer>
+
+</body>
+</html>
